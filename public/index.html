@@ -8,8 +8,8 @@
 <body>
   <div id="app">
     <div>{{ message }}</div>
-    <form id="textForm" @submit.prevent="submitForm">
-      <input type="text" v-model="inputText" />
+    <form id="imageForm" @submit.prevent="submitForm">
+      <input id="imageInput" type="file" accept="image/*" capture="environment" @change="handleFileChange" />
       <button type="submit">Submit</button>
     </form>
   </div>
