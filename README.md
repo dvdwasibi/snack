@@ -12,8 +12,9 @@ This repository contains a minimal Node.js (Express) server with a Vue.js front-
    ```sh
    npm start
    ```
-3. Set the `SUPABASE_DB_URL` and `SUPABASE_KEY` environment variables before running
-   the server. These are available from your Supabase project's settings.
+3. Provide the `SUPABASE_DB_URL` and `SUPABASE_KEY` values either in a `.env` file
+   or as environment variables before running the server. These are available from
+   your Supabase project's settings.
 4. Open `http://localhost:3000` in your browser to view the app.
 
 ## Supabase Users Table
