@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <title>Vue Express App</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="/config.js"></script>
 </head>
 <body>
   <div id="app">
     <div>{{ message }}</div>
+    <div v-if="userEmail">Signed in as {{ userEmail }}</div>
+    <button v-if="!userEmail" type="button" @click="signIn">Sign in with Google</button>
+    <button v-else type="button" @click="signOut">Sign Out</button>
     <form id="imageForm" @submit.prevent="submitForm">
       <input id="imageInput" type="file" accept="image/*" capture="environment" @change="handleFileChange" />
       <button type="submit">Submit</button>
     </form>
   </div>
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
