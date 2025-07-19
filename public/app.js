@@ -21,6 +21,22 @@ createApp({
     async updateUser() {
       const { data: { session } } = await supabase.auth.getSession();
       this.userEmail = session ? session.user.email : null;
+      if (session) {
+        await this.ensureUserRecord(session.user);
+      }
+    },
+    async ensureUserRecord(user) {
+      const { error } = await supabase.from('users').upsert(
+        {
+          email: user.email,
+          name: user.user_metadata?.full_name || user.user_metadata?.name || '',
+          stripeAccountId: ''
+        },
+        { onConflict: 'email' }
+      );
+      if (error) {
+        console.error('Failed to sync user:', error);
+      }
     },
     async signIn() {
       await supabase.auth.signInWithOAuth({ provider: 'google' });
