@@ -1,4 +1,5 @@
 const { Client } = require('pg');
+require('dotenv').config({ override: true });
 
 async function main() {
   const connectionString = process.env.SUPABASE_DB_URL;
