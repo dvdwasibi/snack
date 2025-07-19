@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const upload = multer();
 
 // Supabase configuration passed to the client
-const SUPABASE_URL = process.env.SUPABASE_URL || '';
+const SUPABASE_URL = process.env.SUPABASE_DB_URL || '';
 const SUPABASE_KEY = process.env.SUPABASE_KEY || '';
 
 // Serve static files from the public directory
