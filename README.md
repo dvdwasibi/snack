@@ -1,6 +1,6 @@
 # Snack
 
-This repository contains a minimal Node.js (Express) server with a Vue.js front-end.
+This repository contains a minimal Node.js (Express) server with a Vue.js front-end written in TypeScript.
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ This repository contains a minimal Node.js (Express) server with a Vue.js front-
    ```sh
    npm install
    ```
-2. Start the server:
+2. Start the server (compiles the client script and runs with ts-node):
    ```sh
    npm start
    ```
