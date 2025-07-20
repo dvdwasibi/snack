@@ -17,3 +17,6 @@ yarn-error.log*
 # OS files
 .DS_Store
 package-lock.json
+dist/
+public/dist/
+*.tsbuildinfo
